@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed 2 Build</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        section {
+            padding: 20px;
+        }
+        .donation-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .donation-button:hover {
+            background-color: #218838;
+        }
+        .subscribe-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .subscribe-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blessed 2 Build</h1>
+        <p>Helping displaced families rebuild their lives</p>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#vision">Our Vision</a>
+        <a href="#team">Our Team</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Blessed 2 Build is dedicated to helping families who have lost everything due to war and political instability. We support them in rebuilding their lives and advocating for peace.</p>
+    </section>
+    <section id="mission">
+        <h2>Our Mission</h2>
+        <p>Our mission is to assist displaced families facing extreme challenges by providing resources, support, and advocacy to help them rebuild their lives and regain stability.</p>
+    </section>
+    <section id="vision">
+        <h2>Our Vision</h2>
+        <p>We envision a peaceful, blessed world free from hunger, where mental stability and comfort enable families to grow and students to focus on their education while advocating for peace in war zones.</p>
+    </section>
+    <section id="team">
+        <h2>Our Team</h2>
+        <p><strong>Founder: Wegene Bezaye</strong></p>
+        <p>I started Blessed 2 Build because my family and I have personally experienced the devastating effects of political instability and displacement. I am originally from Ethiopia and came to the USA to study at Clark Atlanta University. Just a month after arriving, I learned that my family's home had been demolished due to the ongoing political instability. They were forced to leave the city they had lived in and relocate to a small town in the countryside. I understand the mental, physical, and emotional toll of losing everything—family, friends, and the environment we once called home. Through this organization, I aim to support others facing similar challenges and help them rebuild their lives.</p>
+    </section>
+    <section id="donate">
+        <h2>Donate</h2>
+        <p>Support our mission by making a donation.</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+            <input type="hidden" name="business" value="your-paypal-email@example.com">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="donation-button" name="amount" value="25">$25</button>
+            <button class="donation-button" name="amount" value="50">$50</button>
+            <button class="donation-button" name="amount" value="100">$100</button>
+            <button class="donation-button" name="amount" value="500">$500</button>
+            <button class="donation-button" name="amount" value="1000">$1000</button>
+        </form>
+    </section>
+    <section id="subscribe">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest initiatives and stories.</p>
+        <button class="subscribe-button" onclick="alert('Thank you for subscribing!')">Subscribe</button>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: blessed2buil@gmail.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Blessed 2 Build</p>
+    </footer>
+</body>
+</html>
