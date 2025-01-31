@@ -17,6 +17,11 @@
             color: white;
             padding: 20px;
         }
+        header img {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
         nav {
             margin: 20px 0;
         }
@@ -28,43 +33,19 @@
         }
         section {
             padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-in-out;
         }
-        .donation-button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .donation-button:hover {
-            background-color: #218838;
-        }
-        .subscribe-button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .subscribe-button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="edited_logo.png" alt="Blessed 2 Build Logo">
         <h1>Blessed 2 Build</h1>
         <p>Helping displaced families rebuild their lives</p>
     </header>
@@ -72,52 +53,80 @@
         <a href="#about">About Us</a>
         <a href="#mission">Our Mission</a>
         <a href="#vision">Our Vision</a>
-        <a href="#team">Our Team</a>
-        <a href="#donate">Donate</a>
+        <a href="#programs">Programs</a>
+        <a href="#partners">Partners</a>
+        <a href="#volunteer">Volunteer</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
         <h2>About Us</h2>
         <p>Blessed 2 Build is dedicated to helping families who have lost everything due to war and political instability. We support them in rebuilding their lives and advocating for peace.</p>
+        <ul>
+            <li><strong>Board:</strong> To be updated soon</li>
+            <li><strong>Team:</strong> To be updated soon</li>
+            <li><strong>Leadership:</strong> To be updated soon</li>
+        </ul>
     </section>
-    <section id="mission">
-        <h2>Our Mission</h2>
-        <p>Our mission is to assist displaced families facing extreme challenges by providing resources, support, and advocacy to help them rebuild their lives and regain stability.</p>
+    <section id="programs">
+        <h2>Programs</h2>
+        <p>To be updated soon.</p>
     </section>
-    <section id="vision">
-        <h2>Our Vision</h2>
-        <p>We envision a peaceful, blessed world free from hunger, where mental stability and comfort enable families to grow and students to focus on their education while advocating for peace in war zones.</p>
+    <section id="partners">
+        <h2>Partners</h2>
+        <p>To be updated soon.</p>
     </section>
-    <section id="team">
-        <h2>Our Team</h2>
-        <p><strong>Founder: Wegene Bezaye</strong></p>
-        <p>I started Blessed 2 Build because my family and I have personally experienced the devastating effects of political instability and displacement. I am originally from Ethiopia and came to the USA to study at Clark Atlanta University. Just a month after arriving, I learned that my family's home had been demolished due to the ongoing political instability. They were forced to leave the city they had lived in and relocate to a small town in the countryside. I understand the mental, physical, and emotional toll of losing everything—family, friends, and the environment we once called home. Through this organization, I aim to support others facing similar challenges and help them rebuild their lives.</p>
-    </section>
-    <section id="donate">
-        <h2>Donate</h2>
-        <p>Support our mission by making a donation.</p>
-        <form action="https://www.paypal.com/donate" method="post" target="_blank">
-            <input type="hidden" name="business" value="your-paypal-email@example.com">
-            <input type="hidden" name="currency_code" value="USD">
-            <button class="donation-button" name="amount" value="25">$25</button>
-            <button class="donation-button" name="amount" value="50">$50</button>
-            <button class="donation-button" name="amount" value="100">$100</button>
-            <button class="donation-button" name="amount" value="500">$500</button>
-            <button class="donation-button" name="amount" value="1000">$1000</button>
+    <section id="volunteer">
+        <h2>Volunteer With Us</h2>
+        <p>If you are interested in volunteering with any organizations in Ethiopia, we can connect you with our partner organizations.</p>
+        <form id="volunteerForm">
+            <input type="text" id="volunteerName" placeholder="Your Name" required>
+            <input type="email" id="volunteerEmail" placeholder="Your Email" required>
+            <input type="text" id="volunteerReason" placeholder="Why do you want to volunteer?" required>
+            <input type="text" id="volunteerType" placeholder="Type of organization you want to volunteer with" required>
+            <button class="subscribe-button" type="submit">Submit</button>
         </form>
-    </section>
-    <section id="subscribe">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Stay updated with our latest initiatives and stories.</p>
-        <button class="subscribe-button" onclick="alert('Thank you for subscribing!')">Subscribe</button>
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email: blessed2buil@gmail.com</p>
-        <p>Phone: +1 (123) 456-7890</p>
+        <form id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="text" id="contactProfession" placeholder="Your Profession" required>
+            <textarea id="contactNote" placeholder="Your Message" required></textarea>
+            <button class="subscribe-button" type="submit">Send</button>
+        </form>
     </section>
     <footer>
         <p>&copy; 2025 Blessed 2 Build</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            let options = {
+                threshold: 0.1
+            };
+            let observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        document.getElementById("volunteerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("volunteerName").value;
+            alert("Thank you for your interest in volunteering, " + name + "! We will connect you with our partner organizations.");
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("contactName").value;
+            alert("Thank you, " + name + ". Your message has been received!");
+        });
+    </script>
 </body>
 </html>
