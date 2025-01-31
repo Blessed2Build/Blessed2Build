@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed 2 Build</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        header img {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        section {
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="edited_logo.png" alt="Blessed 2 Build Logo">
+        <h1>Blessed 2 Build</h1>
+        <p>Helping displaced families rebuild their lives</p>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#vision">Our Vision</a>
+        <a href="#programs">Programs</a>
+        <a href="#partners">Partners</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Blessed 2 Build is dedicated to helping families who have lost everything due to war and political instability. We support them in rebuilding their lives and advocating for peace.</p>
+        <ul>
+            <li><strong>Board:</strong> To be updated soon</li>
+            <li><strong>Team:</strong> To be updated soon</li>
+            <li><strong>Leadership:</strong> To be updated soon</li>
+        </ul>
+    </section>
+    <section id="programs">
+        <h2>Programs</h2>
+        <p>To be updated soon.</p>
+    </section>
+    <section id="partners">
+        <h2>Partners</h2>
+        <p>To be updated soon.</p>
+    </section>
+    <section id="volunteer">
+        <h2>Volunteer With Us</h2>
+        <p>If you are interested in volunteering with any organizations in Ethiopia, we can connect you with our partner organizations.</p>
+        <form id="volunteerForm">
+            <input type="text" id="volunteerName" placeholder="Your Name" required>
+            <input type="email" id="volunteerEmail" placeholder="Your Email" required>
+            <input type="text" id="volunteerReason" placeholder="Why do you want to volunteer?" required>
+            <input type="text" id="volunteerType" placeholder="Type of organization you want to volunteer with" required>
+            <button class="subscribe-button" type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="text" id="contactProfession" placeholder="Your Profession" required>
+            <textarea id="contactNote" placeholder="Your Message" required></textarea>
+            <button class="subscribe-button" type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Blessed 2 Build</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            let options = {
+                threshold: 0.1
+            };
+            let observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        document.getElementById("volunteerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("volunteerName").value;
+            alert("Thank you for your interest in volunteering, " + name + "! We will connect you with our partner organizations.");
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("contactName").value;
+            alert("Thank you, " + name + ". Your message has been received!");
+        });
+    </script>
+</body>
+</html>
